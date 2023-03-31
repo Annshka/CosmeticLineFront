@@ -1,0 +1,42 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    border-bottom: 1px solid #dedcdc;
+    margin-bottom: 60px;
+}
+
+.header ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header ul li {
+    margin-left: 30px;
+}
+
+.header ul li a {
+    display: flex;
+    align-items: center;
+}
+
+.header ul li a:hover {
+    color: #6c6c6c;
+}
+
+.header ul li a svg {
+    margin-right: 5px;
+}
+
+.header .logo {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.header .logo span {
+    color: rgb(207, 131, 103);
+    font-size: 30px;
+}
+

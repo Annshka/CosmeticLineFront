@@ -1,0 +1,44 @@
+.sidebar {
+    flex:1;
+    height: calc(100vh - 100px - 150px);
+    background-color: rgb(254,241,224);
+    position: sticky;
+}
+
+.sidebar-wrapper {
+    padding: 20px;
+}
+
+.sidebar-menu {
+    margin-bottom: 10px;
+}
+
+.sidebar-list-item {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.sidebar-list-item:hover {
+    background-color: rgba(200,120,95, 0.25);
+
+}
+
+.sidebar-list-item svg {
+    margin-right: 8px;
+    font-size: 22px;
+}
+
+.sidebar-list-item .link-active {
+    background-color: rgba(200,120,95, 0.25);
+    color: #000;
+    /*font-weight: 800;*/
+    border-radius: 10px;
+    padding: 10px;
+    margin: auto;
+}
+
+.sidebar-list-item .link-inactive {
+    background-color: transparent;
+}
