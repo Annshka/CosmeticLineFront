@@ -110,7 +110,7 @@ h3 {
 /*Register & Login Page*/
 .form-wrapper {
     border: 1px solid rgba(100, 100, 111, 0.2);
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
     border-radius: 5px;
     padding: 2rem;
     width: 70%;

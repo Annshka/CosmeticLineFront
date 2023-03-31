@@ -1,6 +1,6 @@
 import React from "react";
 import './Header.css';
-import {FaSignInAlt, FaSignOutAlt, FaUser} from "react-icons/fa"
+import {FaSignInAlt, FaUser} from "react-icons/fa"
 import {Link} from "react-router-dom";
 
 export const Header = () => {
