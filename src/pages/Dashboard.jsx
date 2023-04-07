@@ -1,20 +1,32 @@
-import React from "react";
+import React, {useEffect} from "react";
+import {Link, useNavigate} from "react-router-dom";
+import {useSelector} from "react-redux";
 import {Sidebar} from "../components/Sidebar/Sidebar";
-import {Link} from "react-router-dom";
 
 import img1 from "../images/containers.jpg";
 import img2 from "../images/fillings.jpg";
 import img3 from "../images/rodion.jpg";
 import img4 from "../images/caps.jpg";
+
 export const Dashboard = () => {
+    const navigate = useNavigate()
+    const { user } = useSelector((state) => state.auth)
+
+    useEffect(() => {
+        if(!user) {
+            navigate('/login')
+        }
+    }, [user, navigate]);
+
+
     return (
         <>
             <div className="container-wrapper">
                 <Sidebar/>
                 <section className="main-content">
                     <div className="heading">
-                        <h1>Welcome </h1>
-                        <p>User Products</p>
+                        <h1>Welcome {user && user.username}</h1>
+                        <p>Select Product</p>
                     </div>
 
                     <div className="products">
