@@ -40,6 +40,7 @@ h3 {
 
 .container-wrapper {
     display: flex;
+    height: 100vh;
 }
 
 .main-content {
@@ -107,20 +108,69 @@ h3 {
     letter-spacing: 1.1px;
 }
 
+/*  HOME */
+.home-container {
+    display: flex;
+    margin-top: 3rem;
+    position: relative;
+}
+
+.home-container img {
+    display: block;
+    width: 100%;
+    border-radius: 460px 200px 400px 120px;
+    position: absolute;
+    top: 8rem;
+    left: auto;
+
+}
+
+.home-text h2 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    background-color: rgba(246, 150, 18, 0.13);
+    border-radius: 120px;
+    padding: 30px;
+    width: 30px;
+}
+
+@media (max-width: 600px) {
+    .home-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .home-text h2 {
+        font-size: 1.5rem;
+    }
+}
+
+
 /*Register & Login Page*/
 .form-wrapper {
-    border: 1px solid rgba(100, 100, 111, 0.2);
-    box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+    border: 1px solid rgba(98, 98, 106, 0.2);
+    box-shadow: rgba(98, 98, 106, 0.2) 0 7px 25px 0;
     border-radius: 5px;
     padding: 2rem;
     width: 70%;
     margin: 0 auto;
 }
 
+.edit-form-wrapper {
+
+    padding: 2rem;
+    width: 100%;
+    margin: 0 auto;
+}
+
 .form {
-    width: 70%;
+    width: 85%;
     margin: 0 auto;
 
+}
+
+.edit-form {
+    width: 100%;
+    margin: 0 auto;
 }
 
 .form-group {
@@ -167,9 +217,7 @@ h3 {
     justify-content: center;
 }
 
-/*.btn svg {*/
-/*    margin-right: 8px;*/
-/*}*/
+
 
 /*.btn-reverse {*/
 /*    background: #fff;*/
@@ -184,4 +232,90 @@ h3 {
 
 .btn:hover {
     transform: scale(0.98);
+}
+
+.btn-create {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.btn-add {
+    margin-bottom: 20px;
+    background: rgb(207, 131, 113);
+    border: none;
+    justify-content: flex-end;
+}
+
+.btn-back {
+    margin-top: 30px;
+    background: rgb(207, 131, 113);
+    border: none;
+}
+
+.image_preview {
+    margin: 2rem 0 2rem 2rem;
+    padding: 2rem;
+    border: 1px solid rgb(180, 180, 180);
+    max-width: 300px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    color: rgb(78, 78, 78);
+}
+.image_preview img {
+    max-width: 100%;
+}
+
+/*PackagingList*/
+.action-component {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.action-component svg {
+    border: none;
+    outline: none;
+    padding: 3px 5px;
+    color: gray;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* ONE ITEM */
+.item-wrapper {
+    margin: 3rem;
+    display: flex;
+    justify-content: center;
+}
+.item-container {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(98, 98, 106, 0.2) 0 7px 25px 0;
+    border-radius: 5px;
+    padding: 2rem;
+}
+
+.item-details {
+    margin: 10px;
+}
+
+.item-details h4 {
+    margin-bottom: 10px;
+}
+
+.item-detail p {
+    display: flex;
+    justify-content: center;
+    line-height: 25px;
+}
+
+.item-detail p span {
+    font-weight: bold;
+    margin-right: 10px;
 }
