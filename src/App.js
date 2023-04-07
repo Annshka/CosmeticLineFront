@@ -8,6 +8,10 @@ import {Dashboard} from "./pages/Dashboard";
 import {Login} from "./pages/Login";
 import {Register} from "./pages/Register";
 import {Header} from "./components/Header/Header";
+import {Package} from "./pages/Package";
+import {PackageList} from "./pages/PackageList";
+import {CreatePackage} from "./pages/CreatePackage";
+import {PackageItem} from "./components/Details/PackageItem";
 
 export const App = () => {
   return (
@@ -20,6 +24,11 @@ export const App = () => {
                   <Route path='/dashboard' element={< Dashboard />} />
                   <Route path='/register' element={< Register />} />
                   <Route path='/login' element={< Login />} />
+                  <Route path='/package/:id' element={< PackageItem />} />
+                  <Route path='/packages' element={< Package />}>
+                      <Route index element={< PackageList />} />
+                      <Route path='create-package' element={< CreatePackage />} />
+                  </Route>
               </Routes>
           </div>
         </Router>

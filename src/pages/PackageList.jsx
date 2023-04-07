@@ -2,16 +2,20 @@ import * as React from "react";
 import {DataGrid} from "@mui/x-data-grid";
 import {useSelector, useDispatch} from "react-redux";
 import {useNavigate} from "react-router-dom";
-import {FaEdit, FaRegEye, FaTrashRestore} from "react-icons/fa";
-import {deletePackage, getPackage} from "../features/package/packageSlice";
+import {FaRegEye, FaTrashRestore} from "react-icons/fa";
+import {deletePackage, getPackages} from "../features/package/packageSlice";
 import {Spinner} from "../components/Spinner/Spinner";
+import EditPackage from "./EditPackage";
+import {useEffect} from "react";
 
 
 
 export const PackageList = (packaging) => {
-    const {packages, isError, isLoading, isSuccess} = useSelector((state) => state.packages);
+    const {packages, isError, isLoading} = useSelector((state) => state.packages);
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
+    const emptyMessage = <p>You don't have any package yet</p>
 
     const rows = packages && packages.map(packaging => {
         return {
@@ -22,7 +26,6 @@ export const PackageList = (packaging) => {
             pType: packaging.type,
             pMaterial: packaging.material,
             pSurface: packaging.surface,
-            //imageUrl: packaging.image.url,
         }
     })
 
@@ -35,13 +38,6 @@ export const PackageList = (packaging) => {
         { field: 'pType', headerName: 'Type', width: 80, editable: true},
         { field: 'pMaterial', headerName: 'Material', width: 80, editable: true},
         { field: 'pSurface', headerName: 'Surface', width: 80, editable: true},
-        // { field: 'imageUrl', headerName: 'Image', width: 80,
-        //     renderCell: (params) => {
-        //         return (
-        //             <img src={params.row.imageUrl} alt="" className='image_container'/>
-        //         )
-        //     }
-        // },
 
         { field: 'actions', headerName: 'Actions', sortable: false, width: 150,
             renderCell: (params) => {
@@ -51,12 +47,10 @@ export const PackageList = (packaging) => {
                 return (
 
                     <div className="action-component">
-                        <button style={{border: "none", background: "transparent"}} onClick={() => handleView(params.row.id)}>
+                        <button style={{border: "none", background: "transparent"}} onClick={() => navigate(`/package/${params.row.id}`)}>
                             <FaRegEye style={{color: "black", fontSize: "26px"}} />
                         </button>
-                        <button style={{border: "none", background: "transparent"}} onClick={() => handleEdit(params.row.id)}>
-                            <FaEdit style={{color: "black", fontSize: "26px"}} />
-                        </button>
+                        <EditPackage packId={params.row.id}/>
                         <button style={{border: "none", background: "transparent"}} onClick={() => handleDelete(params.row.id)}>
                             <FaTrashRestore style={{color: "black", fontSize: "26px"}} />
                         </button>
@@ -66,13 +60,11 @@ export const PackageList = (packaging) => {
         }
     ];
 
-    const handleView = (id) => {
-        dispatch(getPackage(id))
-    }
+    useEffect(() => {
+        dispatch(getPackages())
+        console.log('loading packages')
+    }, [])
 
-    const handleEdit = (id) => {
-
-    }
     const handleDelete = (id) => {
         dispatch(deletePackage(id))
         console.log('deleting')
@@ -86,6 +78,9 @@ export const PackageList = (packaging) => {
                 <p>An error occured {isError.data}.</p>
             ) : (
                 <>
+                    {packages.length === 0 ? (
+                        emptyMessage
+                    ) : (
                     <div style={{ height: 600, width: '100%' }}>
 
                         <DataGrid
@@ -93,17 +88,16 @@ export const PackageList = (packaging) => {
                             columns={columns}
                             pageSize={5}
                             rowsPerPageOptions={[5]}
-                            checkboxSelection
+                            //checkboxSelection
                             disableRowSelectionOnClick
                             getRowId={(row) => row.id}
 
                         />
-                    </div>
+                    </div>)
+                    }
                 </>
             )}
         </>
     );
-
-
 }
 

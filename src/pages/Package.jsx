@@ -8,22 +8,25 @@ export const Package = () => {
 
     return (
         <>
-            <div className="container-wrapper">
-                <Sidebar/>
-                <section className="main-content">
-                    <div className="heading">
-                        <h3>Package</h3>
-                        <div className="btn-create">
-                            <button className="btn btn-add" onClick={() => navigate('/packages/create-package')}>
-                                <FaPlus/>
-                                Create
-                            </button>
-                        </div>
+            <div className="container">
+                <div className="container-wrapper">
+                    <Sidebar/>
+                    <section className="main-content">
+                        <div className="heading">
+                            <h3>Package</h3>
+                            <div className="btn-create">
+                                <button className="btn btn-add" onClick={() => navigate('/packages/create-package')}>
+                                    <FaPlus/>
+                                    Create
+                                </button>
+                            </div>
 
-                        <Outlet />
-                    </div>
-                </section>
+                            <Outlet/>
+                        </div>
+                    </section>
+                </div>
             </div>
+
         </>
     )
 }

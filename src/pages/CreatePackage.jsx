@@ -3,10 +3,8 @@ import {useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {createPackage} from "../features/package/packageSlice";
 
-
 export const CreatePackage = () => {
 
-    // const [packageImg, setPackageImg] = useState("");
     const [type, setType] = useState("");
     const [material, setMaterial] = useState("");
     const [surface, setSurface] = useState("");
@@ -18,36 +16,15 @@ export const CreatePackage = () => {
             width: '',
         });
 
-    const { code, diameter, width } = packageData;
-
+    const {code, diameter, width} = packageData;
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-
-    // const handlePackageImageUpload = (e) => {
-    //     const file = e.target.files[0];
-    //
-    //     TransformFile(file);
-    // };
-    //
-    // const TransformFile = (file) => {
-    //     const reader = new FileReader();
-    //
-    //     if(file) {
-    //         reader.readAsDataURL(file)
-    //         reader.onloadend = () => {
-    //             setPackageImg(reader.result);
-    //         };
-    //     } else {
-    //         setPackageImg("")
-    //     }
-    // }
-
     const onChange = (e) => {
         setPackageData((prevState) => ({
             ...prevState,
-            [e.target.name] : e.target.value,
+            [e.target.name]: e.target.value,
         }))
     }
 
@@ -61,7 +38,6 @@ export const CreatePackage = () => {
             type,
             material,
             surface,
-            // image: packageImg,
         }))
         navigate("/packages")
     }
@@ -74,18 +50,6 @@ export const CreatePackage = () => {
                 </div>
                 <section className="form">
                     <form onSubmit={onSubmit}>
-                        {/*<div className="form-group">*/}
-                        {/*    <input type="file" accept="image/" onChange={handlePackageImageUpload}/>*/}
-                        {/*</div>*/}
-                        {/*<div className="image_preview">*/}
-                        {/*    {packageImg ? (*/}
-                        {/*        <>*/}
-                        {/*            <img src={packageImg} alt="packaging image"/>*/}
-                        {/*        </>*/}
-                        {/*    ) : (*/}
-                        {/*        <p>Place for image preview</p>*/}
-                        {/*    )}*/}
-                        {/*</div>*/}
                         <div className="form-group">
                             <input
                                 type="text"
@@ -147,7 +111,6 @@ export const CreatePackage = () => {
                         </div>
                         <div className="form-group">
                             <button className="btn btn-block" type="submit">
-
                                 Add Packaging
                             </button>
                         </div>
