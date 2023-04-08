@@ -8,7 +8,7 @@ import EditPackage from "./EditPackage";
 import {useEffect} from "react";
 import PackageDetails from "./PackageDetails";
 
-export const PackageList = (packaging) => {
+export const PackageList = () => {
     const {packages, isError, isLoading} = useSelector((state) => state.packages);
     const dispatch = useDispatch();
 
