@@ -7,8 +7,7 @@ Cosmetic Line Pro is a platform based on React Redux and Express.js. Allows crea
 -   [Technologies Used](https://github.com/Annshka/CosmeticLineFront/README-cheatsheet#technologies-used)
 -   [Features](https://github.com/Annshka/CosmeticLineFront/README-cheatsheet#features)
 -   [Screenshots](https://github.com/Annshka/CosmeticLineFront/README-cheatsheet#screenshots)
--   [Setup](https://github.com/Annshka/CosmeticLineFront/README-cheatsheet#setup)
--   [Usage](https://github.com/Annshka/CosmeticLineFront/README-cheatsheet#usage)
+-   [Getting Started](https://github.com/Annshka/CosmeticLineFront/README-cheatsheet#getting-started)
 
 ## General Information
 
