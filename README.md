@@ -1,46 +1,59 @@
-# Getting Started with Create React App and Redux
+# CosmeticLinePro
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+CosmeticLinePro is a platform based on React Redux and Express.js. Allows creating recipes for new cosmetic products.
 
-## Available Scripts
+## Table of Contents
+-   [General Information](https://github.com/Annshka/CosmeticLineFront/README-cheatsheet#general-information)
+-   [Technologies Used](https://github.com/Annshka/CosmeticLineFront/README-cheatsheet#technologies-used)
+-   [Features](https://github.com/Annshka/CosmeticLineFront/README-cheatsheet#features)
+-   [Screenshots](https://github.com/Annshka/CosmeticLineFront/README-cheatsheet#screenshots)
+-   [Setup](https://github.com/Annshka/CosmeticLineFront/README-cheatsheet#setup)
+-   [Usage](https://github.com/Annshka/CosmeticLineFront/README-cheatsheet#usage)
 
-In the project directory, you can run:
+## General Information
 
-### `npm start`
+Product platform for customers to manage products for the production lines of the cosmetics industry
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies Used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Built with:
 
-### `npm test`
+-   Node.js v14.5.4 
+-   React v18.2
+-   Redux v8.0.5
+-   Express v4.18.2
+-   MongoDB
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
 
-### `npm run build`
+>**Current features**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Everything reactive in real time
+- Client registration, login and JWT authentication
+- Page customization to allow customers creating and deleting selected products in the browser
+- New dialog on updating and showing product details
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+>**Planned features**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Admin panel
+- User account management
+- Ability to add product photos
+- All product pages with product variants
+- Making tests
 
-### `npm run eject`
+## Screenshots
+![screen_shots_1](https://user-images.githubusercontent.com/129051061/230738669-1a8db881-d70e-4c33-aa9f-62dbe8955636.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![screen_shots_2](https://user-images.githubusercontent.com/129051061/230738671-e9e9d424-3d04-42d1-8d97-c291d7a83f30.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Getting Started
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Clone Repo
+Clone Git repo:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+### Run Project
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Run API server: npm run server
+Run Client Website: npm run start and open http://localhost:3000
 
-To learn React, check out the [React documentation](https://reactjs.org/).
