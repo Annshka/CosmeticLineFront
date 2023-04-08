@@ -21,7 +21,21 @@ export const Header = () => {
         <>
             <header className="header">
                 <div className="logo">
-                    <Link to='/'><span>CosmeticLine</span> Pro</Link>
+                    <ul>
+                        {user ? (
+                            <li>
+                                <Link to='/dashboard'><span>CosmeticLine</span> Pro</Link>
+                            </li>
+                        ) : (
+                            <>
+                                <li>
+                                    <Link to='/'><span>CosmeticLine</span> Pro</Link>
+                                </li>
+                            </>
+                        )}
+
+                    </ul>
+
                 </div>
                 <ul>
                     {user ? (

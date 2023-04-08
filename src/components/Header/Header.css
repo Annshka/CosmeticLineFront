@@ -40,3 +40,6 @@
     font-size: 30px;
 }
 
+.btn svg {
+    margin-right: 8px;
+}
