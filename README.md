@@ -1,6 +1,6 @@
-# CosmeticLinePro
+# Cosmetic Line Pro
 
-CosmeticLinePro is a platform based on React Redux and Express.js. Allows creating recipes for new cosmetic products.
+Cosmetic Line Pro is a platform based on React Redux and Express.js. Allows creating recipes for new cosmetic products.
 
 ## Table of Contents
 -   [General Information](https://github.com/Annshka/CosmeticLineFront/README-cheatsheet#general-information)
@@ -50,10 +50,10 @@ Built with:
 
 ### Clone Repo
 Clone Git repo:
-
+https://github.com/Annshka/CosmeticLineFront.git
 
 ### Run Project
 
-Run API server: npm run server
-Run Client Website: npm run start and open http://localhost:3000
+- Run API server: npm run server
+- Run Client Website: npm run start and open http://localhost:3000
 
