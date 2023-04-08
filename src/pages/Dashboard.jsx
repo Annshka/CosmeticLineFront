@@ -26,7 +26,7 @@ export const Dashboard = () => {
                 <section className="main-content">
                     <div className="heading">
                         <h1>Welcome {user && user.username}</h1>
-                        <p>Select Product</p>
+                        <p>Select Category</p>
                     </div>
 
                     <div className="products">

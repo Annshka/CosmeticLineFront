@@ -109,13 +109,13 @@ h3 {
 }
 
 /*  HOME */
-.home-container {
+.home-container, .under-construction-container {
     display: flex;
     margin-top: 3rem;
     position: relative;
 }
 
-.home-container img {
+.home-container img, .under-construction-container img {
     display: block;
     width: 100%;
     border-radius: 460px 200px 400px 120px;

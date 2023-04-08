@@ -1,19 +1,16 @@
 import * as React from "react";
 import {DataGrid} from "@mui/x-data-grid";
 import {useSelector, useDispatch} from "react-redux";
-import {useNavigate} from "react-router-dom";
-import {FaRegEye, FaTrashRestore} from "react-icons/fa";
+import {FaTrashRestore} from "react-icons/fa";
 import {deletePackage, getPackages} from "../features/package/packageSlice";
 import {Spinner} from "../components/Spinner/Spinner";
 import EditPackage from "./EditPackage";
 import {useEffect} from "react";
-
-
+import PackageDetails from "./PackageDetails";
 
 export const PackageList = (packaging) => {
     const {packages, isError, isLoading} = useSelector((state) => state.packages);
     const dispatch = useDispatch();
-    const navigate = useNavigate();
 
     const emptyMessage = <p>You don't have any package yet</p>
 
@@ -29,30 +26,28 @@ export const PackageList = (packaging) => {
         }
     })
 
-
     const columns = [
-        { field: 'id', headerName: 'ID', width: 100 },
-        { field: 'pCode', headerName: 'Code', width: 80, editable: true },
-        { field: 'pDiameter', headerName: 'Diameter', width: 80, editable: true },
-        { field: 'pWidth', headerName: 'Width', width: 50, editable: true},
-        { field: 'pType', headerName: 'Type', width: 80, editable: true},
-        { field: 'pMaterial', headerName: 'Material', width: 80, editable: true},
-        { field: 'pSurface', headerName: 'Surface', width: 80, editable: true},
+        // { field: 'id', headerName: 'ID', width: 100 },
+        {field: 'pCode', headerName: 'Code', width: 90, editable: true},
+        {field: 'pDiameter', headerName: 'Diameter', width: 80, editable: true},
+        {field: 'pWidth', headerName: 'Width', width: 50, editable: true},
+        {field: 'pType', headerName: 'Type', width: 80, editable: true},
+        {field: 'pMaterial', headerName: 'Material', width: 80, editable: true},
+        {field: 'pSurface', headerName: 'Surface', width: 80, editable: true},
 
-        { field: 'actions', headerName: 'Actions', sortable: false, width: 150,
+        {
+            field: 'actions', headerName: 'Actions', sortable: false, width: 150,
             renderCell: (params) => {
-                console.log("editing table", params.row)
+                // console.log("editing table", params.row)
 
 
                 return (
-
                     <div className="action-component">
-                        <button style={{border: "none", background: "transparent"}} onClick={() => navigate(`/package/${params.row.id}`)}>
-                            <FaRegEye style={{color: "black", fontSize: "26px"}} />
-                        </button>
+                        <PackageDetails packId={params.row.id}/>
                         <EditPackage packId={params.row.id}/>
-                        <button style={{border: "none", background: "transparent"}} onClick={() => handleDelete(params.row.id)}>
-                            <FaTrashRestore style={{color: "black", fontSize: "26px"}} />
+                        <button style={{border: "none", background: "transparent"}}
+                                onClick={() => handleDelete(params.row.id)}>
+                            <FaTrashRestore style={{color: "black", fontSize: "26px"}}/>
                         </button>
                     </div>
                 )
@@ -62,18 +57,18 @@ export const PackageList = (packaging) => {
 
     useEffect(() => {
         dispatch(getPackages())
-        console.log('loading packages')
+        // console.log('loading packages')
     }, [])
 
     const handleDelete = (id) => {
         dispatch(deletePackage(id))
-        console.log('deleting')
+        // console.log('deleting')
     }
 
     return (
         <>
             {isLoading ? (
-                <Spinner />
+                <Spinner/>
             ) : isError ? (
                 <p>An error occured {isError.data}.</p>
             ) : (
@@ -81,19 +76,18 @@ export const PackageList = (packaging) => {
                     {packages.length === 0 ? (
                         emptyMessage
                     ) : (
-                    <div style={{ height: 600, width: '100%' }}>
+                        <div style={{height: 600, width: '100%'}}>
 
-                        <DataGrid
-                            rows={rows}
-                            columns={columns}
-                            pageSize={5}
-                            rowsPerPageOptions={[5]}
-                            //checkboxSelection
-                            disableRowSelectionOnClick
-                            getRowId={(row) => row.id}
-
-                        />
-                    </div>)
+                            <DataGrid
+                                rows={rows}
+                                columns={columns}
+                                pageSize={5}
+                                rowsPerPageOptions={[5]}
+                                //checkboxSelection
+                                disableRowSelectionOnClick
+                                getRowId={(row) => row.id}
+                            />
+                        </div>)
                     }
                 </>
             )}

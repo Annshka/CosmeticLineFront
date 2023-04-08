@@ -54,7 +54,6 @@ export const Login = () => {
         return <Spinner/>
     }
 
-
     return (
         <>
             <div className="form-wrapper">
@@ -89,7 +88,8 @@ export const Login = () => {
                         <div className="form-group">
                             <button type="submit" className="btn btn-block">Submit</button>
                         </div>
-                        <p>Don't have an account yet? <Link to={'/register'}><span className="form-link">Register now</span></Link></p>
+                        <p>Don't have an account yet? <Link to={'/register'}><span
+                            className="form-link">Register now</span></Link></p>
                     </form>
                 </section>
             </div>

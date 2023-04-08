@@ -62,12 +62,10 @@ export const Register = () => {
     return (
         <>
             <div className="form-wrapper">
-                <section className="heading">
-                    <h1>
-                        Register
-                    </h1>
+                <div className="heading">
+                    <h1>Register</h1>
                     <p>Please create an account</p>
-                </section>
+                </div>
 
                 <section className="form">
                     <form onSubmit={onSubmit}>
@@ -118,7 +116,6 @@ export const Register = () => {
                     </form>
                 </section>
             </div>
-
         </>
     )
 };

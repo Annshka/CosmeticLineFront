@@ -12,6 +12,7 @@ import {Package} from "./pages/Package";
 import {PackageList} from "./pages/PackageList";
 import {CreatePackage} from "./pages/CreatePackage";
 import {PackageItem} from "./components/Details/PackageItem";
+import {UnderConstruction} from "./components/UnderConstruction/UnderConstruction";
 
 export const App = () => {
   return (
@@ -29,6 +30,11 @@ export const App = () => {
                       <Route index element={< PackageList />} />
                       <Route path='create-package' element={< CreatePackage />} />
                   </Route>
+                  <Route path='/fillings' element={< UnderConstruction />} />
+                  <Route path='/caps' element={< UnderConstruction />} />
+                  <Route path='/aluminum-foil-seals' element={< UnderConstruction />} />
+                  <Route path='/machine-line' element={< UnderConstruction />} />
+                  <Route path='/account' element={< UnderConstruction />} />
               </Routes>
           </div>
         </Router>

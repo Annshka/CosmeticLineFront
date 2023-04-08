@@ -21,14 +21,14 @@ export const Sidebar = () => {
                     <ul className="sidebar-list">
                         <li className="sidebar-list-item">
                             <Link className={({ isActive }) => isActive ? "link-active" : "link-inactive" }
-                                     to='/' >
+                                     to='/account' >
                                 <FaUserCircle />
                                 Account
                             </Link>
                         </li>
                         <li className="sidebar-list-item">
                             <Link className={({ isActive }) => isActive ? "link-active" : "link-inactive" }
-                                     to='/products' >
+                                     to='/dashboard' >
                                 <FaListUl />
                                 Products
                             </Link>
@@ -40,7 +40,7 @@ export const Sidebar = () => {
                     <ul className="sidebar-list">
                         <li className="sidebar-list-item">
                             <Link className={({ isActive }) => isActive ? "link-active" : "link-inactive" }
-                                     to='/' >
+                                     to='/machine-line' >
                                 <FaLayerGroup />
                                 Machine Line
                             </Link>
@@ -54,7 +54,7 @@ export const Sidebar = () => {
                         </li>
                         <li className="sidebar-list-item">
                             <Link className={({ isActive }) => isActive ? "link-active" : "link-inactive" }
-                                     to='/' >
+                                     to='/fillings' >
                                 <FaCloudsmith />
                                 Fillings
                             </Link>
@@ -68,7 +68,7 @@ export const Sidebar = () => {
                         </li>
                         <li className="sidebar-list-item">
                             <Link className={({ isActive }) => isActive ? "link-active" : "link-inactive" }
-                                     to='/' >
+                                     to='/caps' >
                                 <FaHockeyPuck/>
                                 Caps
                             </Link>
