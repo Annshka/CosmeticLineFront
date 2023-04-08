@@ -16,7 +16,7 @@ export const createPackage = createAsyncThunk(
     async (packageData, thunkAPI) => {
         try {
             const token = thunkAPI.getState().auth.user.token
-            console.log('createPackage / packageSlice')
+            // console.log('createPackage / packageSlice')
             return await packageService.createPackage(packageData, token)
 
         } catch (err) {
@@ -31,32 +31,13 @@ export const createPackage = createAsyncThunk(
     }
 )
 
-// Update packaging
-export const updatePackage = createAsyncThunk(
-    'packages/update',
-    async ({id, packageData}, thunkAPI) => {
-        try {
-            const token = thunkAPI.getState().auth.user.token
-            return await packageService.updatePackage(id, packageData, token)
-        } catch (error) {
-            const message =
-                (error.response &&
-                    error.response.data &&
-                    error.response.data.message) ||
-                error.message ||
-                error.toString()
-            return thunkAPI.rejectWithValue(message)
-        }
-    }
-)
-
 //Get packages
 export const getPackages = createAsyncThunk(
     'packages/getAll',
     async (_, thunkAPI) => {
         try {
             const token = thunkAPI.getState().auth.user.token
-            console.log('getPackages / packageSlice')
+            // console.log('getPackages / packageSlice')
             return await packageService.getPackages(token)
         } catch (err) {
             const message =
@@ -77,7 +58,7 @@ export const getPackage = createAsyncThunk(
     async (id, thunkAPI) => {
         try {
             const token = thunkAPI.getState().auth.user.token
-            console.log('getPackage / packageSlice')
+            // console.log('getPackage / packageSlice')
             return await packageService.getPackage(id, token)
         } catch (err) {
             const message =
@@ -86,6 +67,25 @@ export const getPackage = createAsyncThunk(
                     err.response.data.message) ||
                 err.message ||
                 err.toString()
+            return thunkAPI.rejectWithValue(message)
+        }
+    }
+)
+
+// Update packaging
+export const updatePackage = createAsyncThunk(
+    'packages/update',
+    async ({id, packageData}, thunkAPI) => {
+        try {
+            const token = thunkAPI.getState().auth.user.token
+            return await packageService.updatePackage(packageData._id, packageData, token)
+        } catch (error) {
+            const message =
+                (error.response &&
+                    error.response.data &&
+                    error.response.data.message) ||
+                error.message ||
+                error.toString()
             return thunkAPI.rejectWithValue(message)
         }
     }
@@ -128,7 +128,7 @@ export const packageSlice = createSlice({
                 state.isLoading = false
                 state.isSuccess = true
                 state.packages.push(action.payload)
-                toast.success("Package created successfully", {
+                toast.success("Package created", {
                     position: "bottom-left"
                 })
             })
@@ -150,6 +150,37 @@ export const packageSlice = createSlice({
                 state.isError = true
                 state.message = action.payload
             })
+            .addCase(getPackage.pending, (state) => {
+                state.isLoading = true
+            })
+            .addCase(getPackage.fulfilled, (state, action) => {
+                state.isLoading = false
+                state.isSuccess = true
+                state.packages = action.payload
+            })
+            .addCase(getPackage.rejected, (state, action) => {
+                state.isLoading = false
+                state.isError = true
+                state.message = action.payload
+            })
+            .addCase(updatePackage.pending, (state) => {
+                state.isLoading = true
+            })
+            .addCase(updatePackage.fulfilled, (state, action) => {
+                state.isLoading = false
+                state.isSuccess = true
+                state.packages = state.packages.map((packaging) =>
+                    packaging._id === action.payload._id ? action.payload : packaging
+                )
+                toast.info("Package edited", {
+                    position: "bottom-left"
+                })
+            })
+            .addCase(updatePackage.rejected, (state, action) => {
+                state.isLoading = false
+                state.isError = true
+                state.message = action.payload
+            })
             .addCase(deletePackage.pending, (state) => {
                 state.isLoading = true
             })
@@ -159,7 +190,7 @@ export const packageSlice = createSlice({
                 state.packages = state.packages.filter(
                     (packaging) => packaging._id !== action.payload.id
                 )
-                toast.error("Package removed successfully", {
+                toast.error("Package removed", {
                     position: "bottom-left"
                 })
             })

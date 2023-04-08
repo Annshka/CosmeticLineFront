@@ -9,7 +9,7 @@ const createPackage = async (packageData, token) => {
             Authorization: `Bearer ${token}`
         }
     }
-    console.log('createPackage / packageService')
+    // console.log('createPackage / packageService')
     const response = await axios.post(API_URL, packageData, config)
 
     // if(response.data) {
@@ -28,7 +28,7 @@ const getPackages = async (token) => {
             Authorization: `Bearer ${token}`,
         },
     }
-console.log('getPackages')
+    // console.log('getPackages')
     const response = await axios.get(API_URL, config)
 
     return response.data
@@ -41,9 +41,9 @@ const getPackage = async(packageId, token) => {
             Authorization: `Bearer ${token}`,
         }
     }
-    console.log('getPackage')
-    const response = await axios.get(API_URL + packageId, config)
 
+    const response = await axios.get(API_URL + packageId, config)
+    // console.log('getPackage: ' + response.data.toString())
     return response.data
 }
 
