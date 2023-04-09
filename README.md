@@ -1,4 +1,4 @@
-# Cosmetic Line Pro
+# Cosmetic Line Pro - Frontend
 
 Cosmetic Line Pro is a platform based on React Redux and Express.js. Allows creating recipes for new cosmetic products.
 
