@@ -51,6 +51,9 @@ Clone Git repo:
 https://github.com/Annshka/CosmeticLineFront.git
 
 ### Run Project
+To run this project, install it locally using npm:
 
-- Run Client Website: npm run start and open http://localhost:3000
+ cd client
+ npm install
+ Run Client Website: npm run start and open http://localhost:3000
 
