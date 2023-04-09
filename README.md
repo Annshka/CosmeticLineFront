@@ -17,17 +17,13 @@ Product platform for customers to manage products for the production lines of th
 
 Built with:
 
--   Node.js v14.5.4 
 -   React v18.2
 -   Redux v8.0.5
--   Express v4.18.2
--   MongoDB
 
 ## Features
 
 >**Current features**
 
-- Everything reactive in real time
 - Client registration, login and JWT authentication
 - Page customization to allow customers creating and deleting selected products in the browser
 - New dialog on updating and showing product details
@@ -39,6 +35,9 @@ Built with:
 - Ability to add product photos
 - All product pages with product variants
 - Making tests
+
+## Demo
+![screen_shots_1](https://drive.google.com/uc?id=116_-2KAeI8oj_y7Wx9aGONAkYEwjETnP)
 
 ## Screenshots
 ![screen_shots_1](https://user-images.githubusercontent.com/129051061/230738669-1a8db881-d70e-4c33-aa9f-62dbe8955636.png)
@@ -53,6 +52,5 @@ https://github.com/Annshka/CosmeticLineFront.git
 
 ### Run Project
 
-- Run API server: npm run server
 - Run Client Website: npm run start and open http://localhost:3000
 
