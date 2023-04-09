@@ -47,13 +47,17 @@ Built with:
 ## Getting Started
 
 ### Clone Repo
+``
 Clone Git repo:
 https://github.com/Annshka/CosmeticLineFront.git
+``
 
 ### Run Project
 To run Client Website, install it locally using npm:
 
+```
  cd client
  npm install
  npm run start and open http://localhost:3000
+ ```
 
